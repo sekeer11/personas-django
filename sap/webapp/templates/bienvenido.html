@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+<body>
+    <h1>Sistema de Administración de Personas (SAP)</h1>
+    <div>
+        Número de personas: {{no_personas}}
+    </div>
+    <div>
+        <button><a href="nueva_persona">Agregar Persona</a></button>
+    </div>
+    <div>
+        <ul>
+            {% for persona in personas %}
+                <li>
+                    Persona {{persona.id}}:
+                    {{persona.nombre}}
+                    {{persona.apellidos}}
+                    {{persona.email}}
+                    <button><a href="detalle_persona/{{persona.id}}">Ver detalle</a></button>
+                    <button><a href="editar_persona/{{persona.id}}">Editar</a></button>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

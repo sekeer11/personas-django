@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Persona</title>
+</head>
+<body>
+    <h2>{% if insert %} Agregar {% else %} Editar {% endif %} Persona</h2>
+    <form method="POST">
+        <table>
+        {{formaPersona}}
+        </table>
+        <button type="submit">Enviar</button>
+        {% csrf_token %}
+    </form>
+</body>
+</html>
