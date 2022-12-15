@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Bienvenido</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido</title>
+
+  <link href="styles/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/datatables/datatables.min.css" rel="stylesheet">
+
+  <script src="styles/js/jquery-3.4.1.js"></script>
+  <script src="styles/js/popper.min.js"></script>
+  <script src="styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="styles/datatables/datatables.min.js"></script>
 </head>
+
 <body>
-    <h1>Sistema de Administración de Personas (SAP)</h1>
-    <div>
-        Número de personas: {{no_personas}}
-    </div>
-    <div>
-        <button><a href="nueva_persona">Agregar Persona</a></button>
-    </div>
-    <div>
-        <ul>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-12">
+        <table class="table .table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
             {% for persona in personas %}
-                <li>
-                    Persona {{persona.id}}:
-                    {{persona.nombre}}
-                    {{persona.apellidos}}
-                    {{persona.email}}
-                    <button><a href="detalle_persona/{{persona.id}}">Ver detalle</a></button>
-                    <button><a href="editar_persona/{{persona.id}}">Editar</a></button>
-                </li>
+              <tr>
+                <th scope="row">{{persona.id}}</th>
+                <td>{{persona.nombre}}</td>
+                <td>{{persona.apellidos}}</td>
+                <td>{{persona.email}}</td>
+                <td><button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Detalles"><a href="detalle_persona/{{persona.id}}">D</a></button>  <button type="button" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Editar"><a href="editar_persona/{{persona.id}}">E</a></button></td>
+              </tr>
             {% endfor %}
-        </ul>
+            </tbody>
+        </table>
+      </div>
     </div>
+   </div>
 </body>
 </html>
