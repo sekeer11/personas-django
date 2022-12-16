@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bienvenido</title>
-
-  <link href="styles/bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/datatables/datatables.min.css" rel="stylesheet">
-
-  <script src="styles/js/jquery-3.4.1.js"></script>
-  <script src="styles/js/popper.min.js"></script>
-  <script src="styles/bootstrap-4.3.1/js/bootstrap.min.js"></script>
-  <script src="styles/datatables/datatables.min.js"></script>
-</head>
-
-<body>
+{% block content %}
   <div class="container">
     <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Agregar"><a href="personas/nueva_persona">Agregar</a></button>
     <div class="row">
@@ -45,5 +30,4 @@
       </div>
     </div>
    </div>
-</body>
-</html>
+{% endblock %}

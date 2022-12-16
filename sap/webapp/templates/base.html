@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido</title>
+  {% load static %}
+  <link href="{% static 'styles/bootstrap-4.3.1/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'styles/datatables/datatables.min.css' %}" rel="stylesheet">
+
+  <script src="{% static 'styles/js/jquery-3.4.1.js' %}"></script>
+  <script src="{% static 'styles/js/popper.min.js' %}"></script>
+  <script src="{% static 'styles/bootstrap-4.3.1/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'styles/datatables/datatables.min.js' %}"></script>
+</head>
+
+<body>
+  {% block content %}
+
+  {% endblock %}
+</body>
+</html>
