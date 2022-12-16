@@ -1,18 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Persona</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
     <h2>{% if insert %} Agregar {% else %} Editar {% endif %} Persona</h2>
-    <form method="POST">
-        <table>
-        {{formaPersona}}
-        </table>
-        <button type="submit">Enviar</button>
-        <button><a href="{% url 'index' %}">Regresar</a></button>
-        {% csrf_token %}
-    </form>
-</body>
-</html>
+    <div class="row">
+      <div class="col-9">
+        <form method="POST">
+          <div class="form-group">
+            <label>Nombre</label>
+            {{formaPersona.nombre}}
+          </div>
+          <div class="form-group">
+            <label>Apellidos</label>
+            {{formaPersona.apellidos}}
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            {{formaPersona.email}}
+          </div>
+          <div class="form-group">
+            <label>Domicilio</label>
+            {{formaPersona.domicilio}}
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+            {% csrf_token %}
+        </form>
+      </div>
+    </div>
+   </div>
+{% endblock %}

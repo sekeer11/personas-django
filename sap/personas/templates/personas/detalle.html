@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Detalle Persona</title>
-</head>
-<body>
-  <h1>Detalle Persona</h1>
-  <div>ID: {{persona.id}}</div>
-  <div>Nombre: {{persona.nombre}}</div>
-  <div>Apellidos: {{persona.apellidos}}</div>
-  <div>Email: {{persona.email}}</div>
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action active">
+            Detalles de la Persona
+          </a>
+          <a href="#" class="list-group-item list-group-item-action">ID: {{persona.id}}</a>
+          <a href="#" class="list-group-item list-group-item-action">Nombre: {{persona.nombre}}</a>
+          <a href="#" class="list-group-item list-group-item-action">Apellidos: {{persona.apellidos}}</a>
+          <a href="#" class="list-group-item list-group-item-action">Email: {{persona.email}}</a>
+        </div>
   <button><a href="{% url 'index' %}">Regresar</a></button>
-</body>
-</html>
+      </div>
+    </div>
+   </div>
+
+
+{% endblock %}

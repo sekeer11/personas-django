@@ -2,7 +2,6 @@
 
 {% block content %}
   <div class="container">
-    <button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Agregar"><a href="personas/nueva_persona">Agregar</a></button>
     <div class="row">
       <div class="col-12">
         <table class="table .table-striped">
@@ -13,6 +12,9 @@
                 <th scope="col">Apellidos</th>
                 <th scope="col">Email</th>
                 <th scope="col">Acciones</th>
+                <th scope="col">
+                <button type="button" class="btn btn-outline-success" data-toggle="tooltip" data-placement="top" title="Agregar"><a href="personas/nueva_persona">Agregar</a></button>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -22,7 +24,7 @@
                 <td>{{persona.nombre}}</td>
                 <td>{{persona.apellidos}}</td>
                 <td>{{persona.email}}</td>
-                <td><button type="button" class="btn btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Detalles"><a href="personas/detalle_persona/{{persona.id}}">D</a></button>  <button type="button" class="btn btn-outline-info" data-toggle="tooltip" data-placement="top" title="Editar"><a href="personas/editar_persona/{{persona.id}}">E</a></button></td>
+                <td><a href="personas/detalle_persona/{{persona.id}}" class="badge badge-primary">Detalles</a> <a href="personas/editar_persona/{{persona.id}}" class="badge badge-success">Editar</a></td>
               </tr>
             {% endfor %}
             </tbody>
